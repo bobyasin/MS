@@ -1,0 +1,146 @@
+MS: single responsibility prensibinden doğmuştur
+
+1) Small
+2) responsible for doing 1 thing well
+3) organisationally aligned
+4) form part of distributed whole
+5) self-contained / autonomous
+
+Benefits of MS
+
+1) Easier to change & deploy (small and decoupled)
+2) Can be built with different technologies
+3) Increased organisational ownership & alignment
+4) Resilient: One service can break but the others will continue
+5) Scalable : You can scale out only the services that you needed
+6) Built to be high replaceable/swappable
+
+
+//-- Docker --//
+
+BUILD = docker build -t bobyasin/platformservice .
+RUN = docker run -p 8080:80 -d bobyasin/platformservice
+SHOW RUNNING CONTAINER = docker ps
+STOP= docker stop <container id>
+START = docker start <container id> => stop olan container ı start eder. Run edilirse yeni bir container oluşur
+PUSH  = docker push <docherhub Id/image name> (docker push bobyasin/platformservice)
+
+
+
+//-- Kubernetes --//
+
+Container orchestrator
+
+pod=The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster.Pods are the 
+    smallest deployable units of computing that you can create and manage in Kubernetes.
+
+deployment :  kubectl apply -f platforms-depl.yaml
+get pods  : kubectl get pods 
+get deployments = kubectl get deployments
+delete deployment = kubectl delete deployment <deployment adı> (ör:platforms-depl)
+get services : kubectl get services // servis türünde deploy ettiğimizde bu komutla servisleri seçeriz
+restart deployment: kubectl rollout restart deployment platforms-depl  
+get namespaces: kubectl get namespace // namespacelere göre pod veya servisleri listelemek için kullanılır
+    ÖR = kubectl get pods --namespace=<namespace adı> // ör=ingress-nginx
+         kubectl get services --namespace=<namespace adı> // ör=ingress-nginx
+storage bilgisi görüntüleme = kubectl get storageclass 
+persistent volume claim listele = kubectl get pvc
+secret create = kubectl create secret generic <secreat adı> --from-literal=key="value"
+          ör  = kubectl create secret generic mssql --from-literal=SA_PASSWORD="pa55qwe"
+
+NOT = secret: Secrets can be defined as Kubernetes objects used to store sensitive data such as user name and passwords with encryption.
+
+//-- EF CORE --/
+
+add migration = dotnet ef migrations add initialmigration
+
+
+
+
+
+// -- Messaging --//
+
+Synchronous Messaging
+    * request/response cycle
+    * requester waits for response
+    * services usually need to know about each others
+    * we are using 2 forms:
+        -Http
+        -Grpc
+
+**What if I mark http actions as Async?
+    * from a messaging perspective this method is still Synchronous.
+    * the client still has to wait for a response
+    * Async in this context (C#) means that the action will not wait for a long running operation.
+    * It will hand back it's thread to the thread pool, where it can be reused.
+    * When the operation finishes it will re-acquire a thread and complete,( and respond back to requestor)
+    * So Async here is about thread exhaustion - the requestor still has to wait (the call as synchronous)
+
+** Synchronous messaging between 
+    * Can and does occur -we will implement!!!
+    * It does tend to pair services(couple them), creating a dependency
+    * could lead to long dependency chains
+
+                                             |------> Service C
+        Service A <------> Service B <-------|
+                                             |------> Service D <---------> Service E 
+
+Asynchronous Messaging
+    * No request/response cycle
+    * requestor deos not wait
+    * event model, publish, subscribe...
+    * typically used between services
+    * Event bus is often used(we will use RabbitMQ)
+    * services don't need to know about each other, just the bus
+    * Introduce its own range of complexities - not a magic bullet
+
+
+
+** Is not the event bus  a Monolith?
+    * to some extent, yes.
+    * internal communications would cease if the message bus goes down
+    * services will still operate and work externally
+    * should be treated as a first class citizen, similar to, network, physical storage, power ...
+    * message bus shoul be clustered, with message persistence etc
+    * services should implement some kind of retry policy
+    * aim for smart services, stupid pipes 
+
+
+//-- API GATEWAY --//
+
+
+
+
+
+
+//-- Event Processing --//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
