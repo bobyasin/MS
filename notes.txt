@@ -119,6 +119,27 @@ Asynchronous Messaging
 
 
 
+// gRPC = Google Remote Procedure Call
+    * uses Https/2 protocol to transport binary messages (include TLS)
+    * Focused on high performance
+    * Relies on "protocol buffers" (also knows as "Protobuf") to defined the contract between end points
+    * Multi language support(C# client can call a Ruby service etc.)
+    * Frequently used as a method of service to service communication
+
+otomatik kod oluşturması için csproj dosyasına ek yaptık:
+    <ItemGroup>
+        <Protobuf Include="Protos/platforms.proto" GrpcServices="Server"></Protobuf>  ----> server(PlatformService)
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="Protos/platforms.proto" GrpcServices="Client"></Protobuf>  -----> client(CommandService)
+    </ItemGroup>
+
+
+
+
+
+
 
 
 

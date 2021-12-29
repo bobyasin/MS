@@ -39,3 +39,7 @@ C:\Users\yasinBabaoglu\Desktop\training\MS\CommandService\obj\Debug\net5.0\Comma
 C:\Users\yasinBabaoglu\Desktop\training\MS\CommandService\obj\Debug\net5.0\CommandService.genruntimeconfig.cache
 C:\Users\yasinBabaoglu\Desktop\training\MS\CommandService\bin\Debug\net5.0\appsettings.Production.json
 C:\Users\yasinBabaoglu\Desktop\training\MS\CommandService\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\Users\yasinBabaoglu\Desktop\training\MS\CommandService\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\yasinBabaoglu\Desktop\training\MS\CommandService\bin\Debug\net5.0\Grpc.Core.Api.dll
+C:\Users\yasinBabaoglu\Desktop\training\MS\CommandService\bin\Debug\net5.0\Grpc.Net.Client.dll
+C:\Users\yasinBabaoglu\Desktop\training\MS\CommandService\bin\Debug\net5.0\Grpc.Net.Common.dll

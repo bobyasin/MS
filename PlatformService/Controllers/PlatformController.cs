@@ -81,7 +81,7 @@ namespace PlatformService.Controllers
             }
             catch (System.Exception ex)
             {
-                System.Console.WriteLine($"---> could not send Asynchronously. {ex.Message}");
+                System.Console.WriteLine($"---> could not send Asynchronously. {ex}");
             }
 
 

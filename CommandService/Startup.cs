@@ -16,6 +16,7 @@ using Microsoft.EntityFrameworkCore.InMemory;
 using Microsoft.EntityFrameworkCore;
 using CommandService.EventProcessing;
 using CommandService.AsyncDataService;
+using CommandService.SychDataServices;
 
 namespace CommandService
 {
@@ -39,6 +40,8 @@ namespace CommandService
 
             services.AddSingleton<IEventProcessor, EventProcessor>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddScoped<IPlatformDataClient, PlatformDataClient>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CommandsService", Version = "v1" });
@@ -65,6 +68,8 @@ namespace CommandService
             {
                 endpoints.MapControllers();
             });
+
+            PrepDb.PrepPopulation(app);
         }
     }
 }

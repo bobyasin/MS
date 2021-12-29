@@ -34,6 +34,9 @@
       "CommandService/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "Google.Protobuf": "3.19.1",
+          "Grpc.Net.Client": "2.41.0",
+          "Grpc.Tools": "2.42.0",
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.Design": "5.0.8",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.8",
@@ -359,6 +362,61 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "Google.Protobuf/3.19.1": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.19.1.0",
+            "fileVersion": "3.19.1.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {}
+        }
+      },
+      "Grpc.Core.Api/2.41.0": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.41.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {}
+        }
+      },
+      "Grpc.Net.Client/2.41.0": {
+        "dependencies": {
+          "Grpc.Net.Common": "2.41.0",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Grpc.Net.Client.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.41.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Grpc.Net.Client.dll": {}
+        }
+      },
+      "Grpc.Net.Common/2.41.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.41.0"
+        },
+        "runtime": {
+          "lib/net5.0/Grpc.Net.Common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.41.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Grpc.Net.Common.dll": {}
+        }
+      },
+      "Grpc.Tools/2.42.0": {},
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -2287,6 +2345,41 @@
       "sha512": "sha512-xSWoVzOipuDU4PeZcUfaZQ+xqXU8QmGv5jrdlxt3MYm9xaOmrefqcfzGQ3SQ+D+8wfBa/ZwSuL0qKOVj080inA==",
       "path": "automapper.extensions.microsoft.dependencyinjection/8.1.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512"
+    },
+    "Google.Protobuf/3.19.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M6yun2BPdHkBjD3V14muZSt72azWHRJEx88ME2TyyH2+/ww6R3hIptjBFQQtO6pmkfLXW/NGQ4hADWSa9AmK2A==",
+      "path": "google.protobuf/3.19.1",
+      "hashPath": "google.protobuf.3.19.1.nupkg.sha512"
+    },
+    "Grpc.Core.Api/2.41.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bQ/mLaeACJ16hINQzKZA0ge648acF0OUiHd8JMdvpywJ41UFilDOd+t3yDG0M2XxgbB98z8EUf0HnprHLOO0qg==",
+      "path": "grpc.core.api/2.41.0",
+      "hashPath": "grpc.core.api.2.41.0.nupkg.sha512"
+    },
+    "Grpc.Net.Client/2.41.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hKuRI7eHxIdrBtricxXuNu+vzjErt7n+zcIr47M56pnajKnzFlG4zwLiPCuxKC22cZTI5S6ef50jCrI/vQrL2w==",
+      "path": "grpc.net.client/2.41.0",
+      "hashPath": "grpc.net.client.2.41.0.nupkg.sha512"
+    },
+    "Grpc.Net.Common/2.41.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mcb6ybFRZYEqn1UVpfCADL2HSTJSK9+V2BBLyS6vebMNkmGwqa0KQ3x++kC+n28MAP4BlrR+jxW0XGNP6V9amw==",
+      "path": "grpc.net.common/2.41.0",
+      "hashPath": "grpc.net.common.2.41.0.nupkg.sha512"
+    },
+    "Grpc.Tools/2.42.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JDOc5lWQEii5m0mcwtRHrQ5NAoc0BE9b5NRzjI/IC8roNynAV/9exWFwLhTW/5wgeaR+ATAfu4ZtMBO+21Z0qA==",
+      "path": "grpc.tools/2.42.0",
+      "hashPath": "grpc.tools.2.42.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
